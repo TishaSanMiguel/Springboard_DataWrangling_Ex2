@@ -23,5 +23,5 @@ View(titanic)
 
 #Create a new column has_cabin_number which has 1 if there is a cabin number, and 0 otherwise
 titanic <- titanic %>% 
-  mutate(`has cabin number` = ifelse(cabin == "", 0, 1))
+  mutate(`has cabin number` = ifelse(is.na(cabin), 0, 1))
 View(titanic)
